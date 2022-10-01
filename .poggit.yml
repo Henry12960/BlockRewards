@@ -1,0 +1,13 @@
+--- # Poggit-CI Manifest. Open the CI at https://poggit.pmmp.io/ci/Henry12960/BlockRewards
+build-by-default: true
+branches:
+- main
+projects:
+  BlockRewards:
+    path: ""
+    icon: "BlockRewards.png"
+    libs:
+      - src: David-pm-pl/libEco/libEco
+        version: ^3.0.0
+        branch: stable
+...
