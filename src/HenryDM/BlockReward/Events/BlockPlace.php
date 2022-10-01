@@ -8,6 +8,8 @@ use pocketmine\event\Listener;
 use pocketmine\item\ItemFactory;
 use davidglitch04\libEco\libEco;
 use pocketmine\event\block\BlockPlaceEvent;
+use pocketmine\console\ConsoleCommandSender;
+use pocketmine\command\Command;
 
 class BlockPlace implements Listener {
 
