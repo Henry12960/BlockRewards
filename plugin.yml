@@ -1,0 +1,8 @@
+name: BlockReward
+main: HenryDM\BlockReward\Main
+api: [4.0.0]
+version: 1.0.0
+author: [HenryDM]
+description: An advanced plugin with wiki to add reward on player break block
+
+softdepend: [EconomyAPI, BedrockEconomy]
