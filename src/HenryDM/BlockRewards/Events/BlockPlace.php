@@ -48,7 +48,7 @@ class BlockPlace implements Listener {
         if($this->getMain()->cfg->get("block-place-reward") === true) {
             if($this->getMain()->cfg->get("block-place-reduce-money") === true) {
                 if(in_array($worldName, $this->getMain()->cfg->get("block-place-reduce-money-worlds", []))) {
-                    if(in_array($name, $this->getMain()->cfg->getNested("blocks", []))) {
+                    if(in_array($name, $this->getMain()->cfg->getNested("blocks"))) {
                         if($this->getMain()->MoneyReduceChance()) {
                             libEco::reduceMoney($player, $bbrmamount, static function(bool $success) : void {
                                 if($success){

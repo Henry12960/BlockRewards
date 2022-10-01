@@ -16,7 +16,9 @@
 
 block-break-reward: true
 block-place-reward: true
-blocks: ["TNT", "DIAMOND_BLOCK"]
+blocks: 
+  - TNT
+  - DIAMOND_BLOCK
 
 # =======================
 #        CHANCES

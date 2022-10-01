@@ -36,7 +36,7 @@ class BlockBreak implements Listener {
         if($this->getMain()->cfg->get("block-break-reward") === true) {
             if($this->getMain()->cfg->get("block-break-add-money") === true) {
                 if(in_array($worldName, $this->getMain()->cfg->get("block-break-add-money-worlds", []))) {
-                    if(in_array($name, $this->getMain()->cfg->getNested("blocks", []))) {
+                    if(in_array($name, $this->getMain()->cfg->getNested("blocks"))) {
                         if($this->getMain()->MoneyAddChance()) {
                             libEco::addMoney($player, $bbaddamount);
                         }
