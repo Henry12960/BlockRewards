@@ -1,8 +1,8 @@
 <?php
 
-namespace HenryDM\BlockReward\Events;
+namespace HenryDM\BlockRewards\Events;
 
-use HenryDM\BlockReward\Main;
+use HenryDM\BlockRewards\Main;
 use pocketmine\event\Listener;
 
 use pocketmine\item\ItemFactory;

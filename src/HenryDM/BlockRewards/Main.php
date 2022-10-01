@@ -1,6 +1,6 @@
 <?php
 
-namespace HenryDM\BlockReward;
+namespace HenryDM\BlockRewards;
 
 # =======================
 #    Pocketmine Class
@@ -14,8 +14,8 @@ use pocketmine\utils\Config;
 #      Plugin Class
 # =======================
 
-use HenryDM\BlockReward\Events\BlockBreak;
-use HenryDM\BlockReward\Events\BlockPlace;
+use HenryDM\BlockRewards\Events\BlockBreak;
+use HenryDM\BlockRewards\Events\BlockPlace;
 
 class Main extends PluginBase implements Listener {  
     
