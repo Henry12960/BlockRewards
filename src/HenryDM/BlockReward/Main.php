@@ -1,6 +1,6 @@
 <?php
 
-namespace HenryDM\BlockRewards;
+namespace HenryDM\BlockReward;
 
 # =======================
 #    Pocketmine Class
