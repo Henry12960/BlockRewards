@@ -21,9 +21,11 @@ class BlockBreak implements Listener {
         
 # ==========================================        
         $player = $event->getPlayer();
-        $bbaddamount = $this->getMain()->cfg->get("break-add-money-amount");
-        $bbrmamount = $this->getMain()->cfg->get("break-reduce-money-amount");
-        $command = $this->getMain()->cfg->get("break-command-trigger");
+        $bbaddamount = $this->getMain()->cfg->get("block-break-add-money-amount");
+        $bbrmamount = $this->getMain()->cfg->get("block-break-reduce-money-amount");
+        $itemid = $this->getMain()->cfg->get("block-break-add-item-id");
+        $itemamount = $this->getMain()->cfg->get("block-break-add-item-amount");
+        $command = str_replace(["{player}", "{line}"], [$name, "\n"], $this->getMain()->cfg->get("block-break-command-trigger");
         $block = $event->getBlock()->getName();
         $name = $block;
         $world = $player->getWorld();
@@ -59,7 +61,7 @@ class BlockBreak implements Listener {
                 if(in_array($worldName, $this->getMain()->cfg->get("block-break-add-item-worlds", []))) {
                     if(in_array($name, $this->getMain()->cfg->getNested("blocks", []))) {
                         if($this->getMain()->AddItemChance()) {
-                            $event->getPlayer()->getInventory()->addItem(ItemFactory::getInstance()->get($itemid));
+                            $event->getPlayer()->getInventory()->addItem(ItemFactory::getInstance()->get($itemid, 0, $itemamount));
                         }
                     }
                 }
@@ -92,7 +94,7 @@ class BlockBreak implements Listener {
 
         if($this->getMain()->cfg->get("block-break-remove-xp") === true) {
             if($this->getMain()->cfg->get("block-break-remove-xp") === true) {
-                if(in_array($worldName, $this->getMain()->cfg->get("block-break-remove-xp", []))) {
+                if(in_array($worldName, $this->getMain()->cfg->get("block-break-remove-xp-worlds", []))) {
                     if(in_array($name, $this->getMain()->cfg->getNested("blocks", []))) {
                         if($this->getMain()->RemoveXpChance()) {
                             $player->getXpManager()->subtractXpLevels($this->getMain()->cfg->get("block-break-remove-xp-value"));

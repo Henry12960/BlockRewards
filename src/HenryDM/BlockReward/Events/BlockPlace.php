@@ -21,9 +21,11 @@ class BlockPlace implements Listener {
         
 # ==========================================        
         $player = $event->getPlayer();
-        $bbaddamount = $this->getMain()->cfg->get("place-add-money-amount");
-        $bbrmamount = $this->getMain()->cfg->get("place-reduce-money-amount");
-        $command = $this->getMain()->cfg->get("place-command-trigger");
+        $bbaddamount = $this->getMain()->cfg->get("block-place-add-money-amount");
+        $bbrmamount = $this->getMain()->cfg->get("block-place-reduce-money-amount");
+        $itemid = $this->getMain()->cfg->get("block-place-add-item-id");
+        $itemamount = $this->getMain()->cfg->get("block-place-add-item-amount");
+        $command = str_replace(["{player}", "{line}"], [$name, "\n"], $this->getMain()->cfg->get("block-place-command-trigger");
         $block = $event->getBlock()->getName();
         $name = $block;
         $world = $player->getWorld();
@@ -59,7 +61,7 @@ class BlockPlace implements Listener {
                 if(in_array($worldName, $this->getMain()->cfg->get("block-place-add-item-worlds", []))) {
                     if(in_array($name, $this->getMain()->cfg->getNested("blocks", []))) {
                         if($this->getMain()->AddItemChance()) {
-                            $event->getPlayer()->getInventory()->addItem(ItemFactory::getInstance()->get($itemid));
+                            $event->getPlayer()->getInventory()->addItem(ItemFactory::getInstance()->get($itemid, 0, $itemamount));
                         }
                     }
                 }
@@ -92,7 +94,7 @@ class BlockPlace implements Listener {
 
         if($this->getMain()->cfg->get("block-place-remove-xp") === true) {
             if($this->getMain()->cfg->get("block-place-remove-xp") === true) {
-                if(in_array($worldName, $this->getMain()->cfg->get("block-place-remove-xp", []))) {
+                if(in_array($worldName, $this->getMain()->cfg->get("block-place-remove-xp-worlds", []))) {
                     if(in_array($name, $this->getMain()->cfg->getNested("blocks", []))) {
                         if($this->getMain()->RemoveXpChance()) {
                             $player->getXpManager()->subtractXpLevels($this->getMain()->cfg->get("block-place-remove-xp-value"));

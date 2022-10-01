@@ -51,9 +51,9 @@ class Main extends PluginBase implements Listener {
     }
 
     public function MoneyAddChance() {
-        if($this->cfg->get("break-money-add-chance") === true) {
+        if($this->cfg->get("add-money-chance") === true) {
             $bbaddpercentage = mt_rand(1, 100);
-            $bbaddchance = $this->cfg->get("break-money-add-chance-value");
+            $bbaddchance = $this->cfg->get("add-money-chance-value");
             if($bbaddpercentage <= $bbaddchance) {
                 return true;
             } else{
@@ -63,9 +63,9 @@ class Main extends PluginBase implements Listener {
     }
 
     public function MoneyReduceChance() {
-        if($this->cfg->get("break-money-reduce-chance") === true) {
+        if($this->cfg->get("reduce-money-chance") === true) {
             $bbrmpercentage = mt_rand(1, 100);
-            $bbrmchance = $this->cfg->get("break-money-reduce-chance-value");
+            $bbrmchance = $this->cfg->get("reduce-money-chance-value");
             if($bbrmpercentage <= $bbrmchance) {
                 return true;
             } else{
@@ -75,9 +75,9 @@ class Main extends PluginBase implements Listener {
     }
 
     public function AddItemChance() {
-        if($this->cfg->get("break-add-item-chance") === true) {
+        if($this->cfg->get("add-item-chance") === true) {
             $bbaipercentage = mt_rand(1, 100);
-            $bbaichance = $this->cfg->get("break-add-item-chance-value");
+            $bbaichance = $this->cfg->get("add-item-chance-value");
             if($bbaipercentage <= $bbaichance) {
                 return true;
             } else{
@@ -87,9 +87,9 @@ class Main extends PluginBase implements Listener {
     }
 
     public function CommandChance() {
-        if($this->cfg->get("break-command-chance") === true) {
+        if($this->cfg->get("command-chance") === true) {
             $bbcmdpercentage = mt_rand(1, 100);
-            $bbcmdchance = $this->cfg->get("break-command-chance-value");
+            $bbcmdchance = $this->cfg->get("command-chance-value");
             if($bbcmdpercentage <= $bbcmdchance) {
                 return true;
             } else{
@@ -99,9 +99,9 @@ class Main extends PluginBase implements Listener {
     }
 
     public function AddXpChance() {
-        if($this->cfg->get("break-add-xp-chance") === true) {
+        if($this->cfg->get("add-xp-chance") === true) {
             $bbaddxppercentage = mt_rand(1, 100);
-            $bbaddxpchance = $this->cfg->get("break-add-xp-chance-value");
+            $bbaddxpchance = $this->cfg->get("add-xp-chance-value");
             if($bbaddxppercentage <= $bbaddxpchance) {
                 return true;
             } else{
@@ -111,9 +111,9 @@ class Main extends PluginBase implements Listener {
     }
 
     public function RemoveXpChance() {
-        if($this->cfg->get("break-add-xp-chance") === true) {
+        if($this->cfg->get("remove-xp-chance") === true) {
             $bbremovexppercentage = mt_rand(1, 100);
-            $bbremovexpchance = $this->cfg->get("break-add-xp-chance-value");
+            $bbremovexpchance = $this->cfg->get("remove-xp-chance-value");
             if($bbremovexppercentage <= $bbremovexpchance) {
                 return true;
             } else{
