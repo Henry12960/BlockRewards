@@ -50,11 +50,11 @@ class BlockPlace implements Listener {
                 if(in_array($worldName, $this->getMain()->cfg->get("block-place-reduce-money-worlds", []))) {
                     if(in_array($name, $this->getMain()->cfg->getNested("blocks", []))) {
                         if($this->getMain()->MoneyReduceChance()) {
-                            libEco::reduceMoney($player, $amount, static function(bool $success) : void {
+                            libEco::reduceMoney($player, $bbrmamount, static function(bool $success) : void {
                                 if($success){
-                                    $player->sendMessage("§cYou lost money!");
+                                    //TODO
                                 } else{
-                                    $this->main->getLogger()->warning("Failed to remove money from player!");
+                                    //TODO
                                 }
                             });
                         }
