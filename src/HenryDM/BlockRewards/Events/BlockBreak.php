@@ -21,6 +21,7 @@ class BlockBreak implements Listener {
         
 # ==========================================        
         $player = $event->getPlayer();
+        $name = $player->getName();
         $bbaddamount = $this->getMain()->cfg->get("block-break-add-money-amount");
         $bbrmamount = $this->getMain()->cfg->get("block-break-reduce-money-amount");
         $itemid = $this->getMain()->cfg->get("block-break-add-item-id");
@@ -49,7 +50,13 @@ class BlockBreak implements Listener {
                 if(in_array($worldName, $this->getMain()->cfg->get("block-break-reduce-money-worlds", []))) {
                     if(in_array($name, $this->getMain()->cfg->getNested("blocks", []))) {
                         if($this->getMain()->MoneyReduceChance()) {
-                            libEco::ReduceMoney($player, $bbrmamount);
+                            libEco::reduceMoney($player, $amount, static function(bool $success) : void {
+                                if($success){
+                                    $player->sendMessage("§cYou lost money!");
+                                } else{
+                                    $this->main->getLogger()->warning("Failed to remove money from player!");
+                                }
+                            });
                         }
                     }
                 }
@@ -73,7 +80,7 @@ class BlockBreak implements Listener {
                 if(in_array($worldName, $this->getMain()->cfg->get("block-break-command-worlds", []))) {
                     if(in_array($name, $this->getMain()->cfg->getNested("blocks", []))) {
                         if($this->getMain()->CommandChance()) {
-                            $this->main->getServer()->getCommandMap()->dispatch(new ConsoleCommandSender($this->getServer(), $this->getServer()->getLanguage()), $command);
+                            $this->main->getServer()->getCommandMap()->dispatch(new ConsoleCommandSender($this->main->getServer(), $this->main->getServer()->getLanguage()), $command);
                         }
                     }
                 }
