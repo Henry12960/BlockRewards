@@ -25,7 +25,7 @@ class BlockBreak implements Listener {
         $bbrmamount = $this->getMain()->cfg->get("block-break-reduce-money-amount");
         $itemid = $this->getMain()->cfg->get("block-break-add-item-id");
         $itemamount = $this->getMain()->cfg->get("block-break-add-item-amount");
-        $command = str_replace(["{player}", "{line}"], [$name, "\n"], $this->getMain()->cfg->get("block-break-command-trigger");
+        $command = str_replace(["{player}", "{line}"], [$name, "\n"], $this->getMain()->cfg->get("block-break-command-trigger"));
         $block = $event->getBlock()->getName();
         $name = $block;
         $world = $player->getWorld();
