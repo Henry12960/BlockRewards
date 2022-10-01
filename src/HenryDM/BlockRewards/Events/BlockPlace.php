@@ -27,8 +27,8 @@ class BlockPlace implements Listener {
         $itemid = $this->getMain()->cfg->get("block-place-add-item-id");
         $itemamount = $this->getMain()->cfg->get("block-place-add-item-amount");
         $command = str_replace(["{player}", "{line}"], [$name, "\n"], $this->getMain()->cfg->get("block-place-command-trigger"));
-        $block = $event->getBlock()->getName();
-        $name = $block;
+        $block = $event->getBlock();
+        $name = str_replace(" ", "_", strtoupper($block->getName()));
         $world = $player->getWorld();
         $worldName = $world->getFolderName();
 # ==========================================
@@ -77,11 +77,9 @@ class BlockPlace implements Listener {
 
         if($this->getMain()->cfg->get("block-place-rewards") === true) {
             if($this->getMain()->cfg->get("block-place-command") === true) {
-                if(in_array($worldName, $this->getMain()->cfg->get("block-place-command-worlds", []))) {
-                    if(in_array($name, $this->getMain()->cfg->getNested("blocks", []))) {
-                        if($this->getMain()->CommandChance()) {
-                            $this->main->getServer()->getCommandMap()->dispatch(new ConsoleCommandSender($this->main->getServer(), $this->main->getServer()->getLanguage()), $command);
-                        }
+                if(in_array($name, $this->getMain()->cfg->getNested("blocks", []))) {
+                    if($this->getMain()->CommandChance()) {
+                        $this->main->getServer()->getCommandMap()->dispatch(new ConsoleCommandSender($this->main->getServer(), $this->main->getServer()->getLanguage()), $command);
                     }
                 }
             }

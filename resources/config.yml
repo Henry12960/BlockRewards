@@ -16,9 +16,7 @@
 
 block-break-reward: true
 block-place-reward: true
-blocks: 
-  - TNT
-  - DIAMOND_BLOCK
+blocks: ["TNT", "DIAMOND_BLOCK", "EMERALD_BLOCK"]
 
 # =======================
 #        CHANCES
@@ -56,7 +54,6 @@ block-break-add-item-worlds: ["AddItemWorld", "AddItemExample"]
 block-break-command: false
 command-chance: true
 block-break-command-trigger: "tell {player} Hi! {line} Command example." 
-block-break-command-worlds: ["CommandWorld", "CommandExample"]
 
 block-break-add-xp: false
 add-xp-chance: true
@@ -92,7 +89,6 @@ block-placea-add-item-worlds: ["AddItemWorld", "AddItemExample"]
 block-place-command: false
 command-chance: true
 block-place-command-trigger: "tell {player} Hi! {line} Command example." 
-block-place-command-worlds: ["CommandWorld", "CommandExample"]
 
 block-place-add-xp: false
 add-xp-chance: true

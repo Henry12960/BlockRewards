@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 namespace HenryDM\BlockRewards\Events;
 
 use HenryDM\BlockRewards\Main;
@@ -27,8 +29,8 @@ class BlockBreak implements Listener {
         $itemid = $this->getMain()->cfg->get("block-break-add-item-id");
         $itemamount = $this->getMain()->cfg->get("block-break-add-item-amount");
         $command = str_replace(["{player}", "{line}"], [$name, "\n"], $this->getMain()->cfg->get("block-break-command-trigger"));
-        $block = $event->getBlock()->getName();
-        $name = $block;
+        $block = $event->getBlock();
+        $name = str_replace(" ", "_", strtoupper($block->getName()));
         $world = $player->getWorld();
         $worldName = $world->getFolderName();
 # ==========================================
@@ -77,11 +79,10 @@ class BlockBreak implements Listener {
 
         if($this->getMain()->cfg->get("block-break-rewards") === true) {
             if($this->getMain()->cfg->get("block-break-command") === true) {
-                if(in_array($worldName, $this->getMain()->cfg->get("block-break-command-worlds", []))) {
-                    if(in_array($name, $this->getMain()->cfg->getNested("blocks", []))) {
-                        if($this->getMain()->CommandChance()) {
-                            $this->main->getServer()->getCommandMap()->dispatch(new ConsoleCommandSender($this->main->getServer(), $this->main->getServer()->getLanguage()), $command);
-                        }
+                if(in_array($name, $this->getMain()->cfg->getNested("blocks", []))) {
+                    if($this->getMain()->CommandChance()) {
+                        $this->main->getServer()->getCommandMap()->dispatch(new ConsoleCommandSender($this->main->getServer(), $this->main->getServer()->getLanguage()), $command);
+                        
                     }
                 }
             }
