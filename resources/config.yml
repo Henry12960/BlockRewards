@@ -75,7 +75,7 @@ block-place-reduce-money-worlds: ["ReduceMoneyWorld", "ReduceMoneyExample"]
 block-place-add-item: false
 block-place-add-item-id: 264
 block-place-add-item-amount: 2
-block-placea-add-item-worlds: ["AddItemWorld", "AddItemExample"]
+block-place-add-item-worlds: ["AddItemWorld", "AddItemExample"]
 
 block-place-command: false
 block-place-command-trigger: "tell {player} Hi! {line} Command example." 
