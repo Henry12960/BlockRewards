@@ -36,32 +36,26 @@ remove-xp-chance-value: 20
 # 1. All addons are disabled! Change to true to enable
 
 block-break-add-money: false
-add-money-chance: true
 block-break-add-money-amount: 10
 block-break-add-money-worlds: ["AddMoneyWorld", "AddMoneyExample"]
 
 block-break-reduce-money: false
-reduce-money-chance: true
 block-break-reduce-money-amount: 5
 block-break-reduce-money-worlds: ["ReduceMoneyWorld", "ReduceMoneyExample"]
 
 block-break-add-item: false
-add-item-chance: true
 block-break-add-item-id: 264
 block-break-add-item-amount: 2
 block-break-add-item-worlds: ["AddItemWorld", "AddItemExample"]
 
 block-break-command: false
-command-chance: true
 block-break-command-trigger: "tell {player} Hi! {line} Command example." 
 
 block-break-add-xp: false
-add-xp-chance: true
 block-break-add-xp-value: 1
 block-break-add-xp-worlds: ["AddXpWorld", "AddXpExample"]
 
 block-break-remove-xp: false
-remove-xp-chance: true
 block-break-remove-xp-value: 1
 block-break-remove-xp-worlds: ["RemoveXpWorld", "RemoveXpExample"]
 
@@ -71,32 +65,26 @@ block-break-remove-xp-worlds: ["RemoveXpWorld", "RemoveXpExample"]
 # 1. All addons are disabled! Change to true to enable
 
 block-place-add-money: false
-add-money-chance: true
 block-place-add-money-amount: 10
 block-place-add-money-worlds: ["AddMoneyWorld", "AddMoneyExample"]
 
 block-place-reduce-money: false
-reduce-money-chance: true
 block-place-reduce-money-amount: 5
 block-place-reduce-money-worlds: ["ReduceMoneyWorld", "ReduceMoneyExample"]
 
 block-place-add-item: false
-add-item-chance: true
 block-place-add-item-id: 264
 block-place-add-item-amount: 2
 block-placea-add-item-worlds: ["AddItemWorld", "AddItemExample"]
 
 block-place-command: false
-command-chance: true
 block-place-command-trigger: "tell {player} Hi! {line} Command example." 
 
 block-place-add-xp: false
-add-xp-chance: true
 block-place-add-xp-value: 1
 block-place-add-xp-worlds: ["AddXpWorld", "AddXpExample"]
 
 block-place-remove-xp: false
-remove-xp-chance: true
 block-place-remove-xp-value: 1
 block-place-remove-xp-worlds: ["RemoveXpWorld", "RemoveXpExample"]
 ...
