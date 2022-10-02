@@ -14,8 +14,8 @@
 # 1. If you set "block-break-reward" to false this function will be disabled
 # 2. If you set "block-place-reward" to false this function will be disabled
 
-block-break-reward: true
-block-place-reward: true
+block-break-rewards: true
+block-place-rewards: true
 blocks: ["TNT", "DIAMOND_BLOCK", "EMERALD_BLOCK"]
 
 # =======================

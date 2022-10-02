@@ -51,74 +51,62 @@ class Main extends PluginBase implements Listener {
     }
 
     public function MoneyAddChance() {
-        if($this->cfg->get("add-money-chance") === true) {
-            $bbaddpercentage = mt_rand(1, 100);
-            $bbaddchance = $this->cfg->get("add-money-chance-value");
-            if($bbaddpercentage <= $bbaddchance) {
-                return true;
-            } else{
-                return false;
-            }
+        $bbaddpercentage = mt_rand(1, 100);
+        $bbaddchance = $this->cfg->get("add-money-chance-value");
+        if($bbaddpercentage <= $bbaddchance) {
+            return true;
+        } else{
+            return false;
     	}
     }
 
     public function MoneyReduceChance() {
-        if($this->cfg->get("reduce-money-chance") === true) {
-            $bbrmpercentage = mt_rand(1, 100);
-            $bbrmchance = $this->cfg->get("reduce-money-chance-value");
-            if($bbrmpercentage <= $bbrmchance) {
-                return true;
-            } else{
-                return false;
-            }
+        $bbrmpercentage = mt_rand(1, 100);
+        $bbrmchance = $this->cfg->get("reduce-money-chance-value");
+        if($bbrmpercentage <= $bbrmchance) {
+            return true;
+        } else{
+            return false;
     	}
     }
 
     public function AddItemChance() {
-        if($this->cfg->get("add-item-chance") === true) {
-            $bbaipercentage = mt_rand(1, 100);
-            $bbaichance = $this->cfg->get("add-item-chance-value");
-            if($bbaipercentage <= $bbaichance) {
-                return true;
-            } else{
-                return false;
-            }
+        $bbaipercentage = mt_rand(1, 100);
+        $bbaichance = $this->cfg->get("add-item-chance-value");
+        if($bbaipercentage <= $bbaichance) {
+            return true;
+        } else{
+            return false;
     	}
     }
 
     public function CommandChance() {
-        if($this->cfg->get("command-chance") === true) {
-            $bbcmdpercentage = mt_rand(1, 100);
-            $bbcmdchance = $this->cfg->get("command-chance-value");
-            if($bbcmdpercentage <= $bbcmdchance) {
-                return true;
-            } else{
-                return false;
-            }
+        $bbcmdpercentage = mt_rand(1, 100);
+        $bbcmdchance = $this->cfg->get("command-chance-value");
+        if($bbcmdpercentage <= $bbcmdchance) {
+            return true;
+        } else {
+            return false;
     	}
     }
 
     public function AddXpChance() {
-        if($this->cfg->get("add-xp-chance") === true) {
-            $bbaddxppercentage = mt_rand(1, 100);
-            $bbaddxpchance = $this->cfg->get("add-xp-chance-value");
-            if($bbaddxppercentage <= $bbaddxpchance) {
-                return true;
-            } else{
-                return false;
-            }
+        $bbaddxppercentage = mt_rand(1, 100);
+        $bbaddxpchance = $this->cfg->get("add-xp-chance-value");
+        if($bbaddxppercentage <= $bbaddxpchance) {
+            return true;
+        } else{
+            return false;
     	}
     }
 
     public function RemoveXpChance() {
-        if($this->cfg->get("remove-xp-chance") === true) {
-            $bbremovexppercentage = mt_rand(1, 100);
-            $bbremovexpchance = $this->cfg->get("remove-xp-chance-value");
-            if($bbremovexppercentage <= $bbremovexpchance) {
-                return true;
-            } else{
-                return false;
-            }
+        $bbremovexppercentage = mt_rand(1, 100);
+        $bbremovexpchance = $this->cfg->get("remove-xp-chance-value");
+        if($bbremovexppercentage <= $bbremovexpchance) {
+            return true;
+        } else{
+            return false;
     	}
     }
 }
