@@ -33,7 +33,7 @@ class BlockPlace implements Listener {
         $name = str_replace(" ", "_", strtoupper($block->getName()));
         $world = $player->getWorld();
         $worldName = $world->getFolderName();
-        $item = LegacyStringToItemParser::getInstance()->parse($itemName);
+        $item = LegacyStringToItemParser::getInstance()->parse($itemid);
         $count = $itemamount;
 # ===========================================================================
 
