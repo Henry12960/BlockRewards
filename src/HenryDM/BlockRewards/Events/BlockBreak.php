@@ -33,6 +33,8 @@ class BlockBreak implements Listener {
         $name = str_replace(" ", "_", strtoupper($block->getName()));
         $world = $player->getWorld();
         $worldName = $world->getFolderName();
+        $item = LegacyStringToItemParser::getInstance()->parse($itemName);
+        $count = $itemamount;
 # ===========================================================================
 
         if($this->getMain()->cfg->get("block-break-rewards") === true) {
@@ -66,7 +68,7 @@ class BlockBreak implements Listener {
                 if(in_array($worldName, $this->getMain()->cfg->get("block-break-add-item-worlds", []))) {
                     if(in_array($name, $this->getMain()->cfg->getNested("blocks", []))) {
                         if($this->getMain()->AddItemChance()) {
-                            $event->getPlayer()->getInventory()->addItem(LegacyStringToItemParser::getInstance()->parse($itemid));
+                            $event->getPlayer()->getInventory()->addItem($item->setCount($count));
                         }
                     }
                 }
