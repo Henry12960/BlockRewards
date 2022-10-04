@@ -66,7 +66,7 @@ class BlockBreak implements Listener {
                 if(in_array($worldName, $this->getMain()->cfg->get("block-break-add-item-worlds", []))) {
                     if(in_array($name, $this->getMain()->cfg->getNested("blocks", []))) {
                         if($this->getMain()->AddItemChance()) {
-                            $event->getPlayer()->getInventory()->addItem(LegacyStringToItemParser::getInstance()->parse($itemid));
+                            $event->getPlayer()->getInventory()->addItem(LegacyStringToItemParser::getInstance()->parse($itemid, 0, $itemamount));
                         }
                     }
                 }
